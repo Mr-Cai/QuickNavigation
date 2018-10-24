@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <TextView
         android:id="@+id/locationTxT"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/fill"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/snippet"
+        app:layout_constraintEnd_toStartOf="@+id/startRoute"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/cities" />
 
     <TextView
         android:id="@+id/snippet"
-        android:layout_width="200dip"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/locationTxT"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:textColor="@android:color/black" />
-
-    <ImageButton
-        android:id="@+id/start_amap_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@id/snippet"
-        android:background="@drawable/start_uri"
-        android:contentDescription="@null" />
+        android:layout_below="@id/locationTxT"
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/locationTxT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationTxT"
+        tools:text="@tools:sample/date/ddmmyy" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/startRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/snippet"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_route"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/locationTxT"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
