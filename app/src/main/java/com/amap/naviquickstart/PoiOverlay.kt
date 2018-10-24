@@ -10,12 +10,12 @@ class PoiOverlay(private val mAMap: AMap?, private val pointSet: List<PoiItem>?)
     private val poiMarks = ArrayList<Marker>()
     private val latLngBounds: LatLngBounds
         get() {
-            val b = LatLngBounds.builder()
+            val builder = LatLngBounds.builder()
             for (i in pointSet!!.indices) {
-                b.include(LatLng(pointSet[i].latLonPoint.latitude,
+                builder.include(LatLng(pointSet[i].latLonPoint.latitude,
                         pointSet[i].latLonPoint.longitude))
             }
-            return b.build()
+            return builder.build()
         }
 
     private val bitmapDescriptor: BitmapDescriptor? = null //标记图标

@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">一键导航(找餐馆)示例</string>
-    <string name="app_id">58eedde4</string>
+    <string name="app_name">一键导航</string>
     <string name="distance">距当前位置%1$s</string>
 </resources>
